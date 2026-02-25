@@ -59,16 +59,31 @@
       <button onclick="generarFrase()">Generar nueva frase</button>
     </div>
     <script>
-      const palabras = [
-        "resiliencia",
-        "inmanencia",
-        "laxitud",
-        "paz interior",
+      const palabras1 = [
+        "la resiliencia",
+        "la inmanencia",
+        "la laxitud",
+        "la paz interior",
         "ligereza",
-        "pan con masa madre",
-        "cocretas",
-        "otredad",
-        "nihilismo"
+        "el pan con masa madre",
+        "las cocretas",
+        "la otredad",
+        "el nihilismo",
+      ];
+
+      const palabras2 = [
+        "la concupiscencia carnal",
+        "la relatividad de lo eterno",
+        "la senectud de los valores",
+        "la asunción de lo oceánico",
+        "el malabarismo de la emoción cruda",
+        "la masa abotargada de las ideas",
+        "la conjunción de lo sublime y lo ridículo",
+        "la aquiescencia de lo absurdo",
+        "la melancolía",
+        "la cola del mercadona",
+        "la efervescencia de lo epatante",
+        "la conjetura de los días de lluvia",
       ];
 
       const inicios = [
@@ -77,7 +92,21 @@
         "En medio del ruido descubro que",
         "Mientras amaso pensamientos como",
         "Con cierta ligereza admito que",
-        "Entre la laxitud del domingo pienso que"
+        "Entre la laxitud del domingo pienso que",
+        "Cuando dialogo con el silencio me doy cuenta de que",
+        "En la evanescencia de lo cotidiano encuentro que",
+        "Al observar el mundo con estupor benevolente, veo que",
+        "En la calma de la mañana, me doy cuenta de que",
+        "En la quietud de la noche, comprendo que",
+        "En la simplicidad de lo cotidiano, descubro que",
+        "En la fragilidad de lo efímero, encuentro que",
+        "En la profundidad de lo banal, me doy cuenta de que",
+        "En la ligereza de lo cotidiano, comprendo que",
+        "En la calma de lo efímero, descubro que",
+        "En la serenidad de lo banal, encuentro que",
+        "En la fragilidad de lo cotidiano, me doy cuenta de que",
+        "En la profundidad de lo efímero, comprendo que",
+        "En la ligereza de lo banal, descubro que",
       ];
 
       const conectores = [
@@ -86,14 +115,23 @@
         "se diluye en",
         "fermenta como",
         "abraza la",
-        "cuestiona el"
+        "cuestiona el",
+        "se entrelaza con",
+        "se funde con",
+        "se contrapone a",
+        "se asocia con",
+        "se refleja en",
+        "se opone a",
+        "se complementa con",
+        "se confunde con",
       ];
 
       function generarFrase() {
         const inicio = inicios[Math.floor(Math.random() * inicios.length)];
-        const palabra1 = palabras[Math.floor(Math.random() * palabras.length)];
-        const conector = conectores[Math.floor(Math.random() * conectores.length)];
-        const palabra2 = palabras[Math.floor(Math.random() * palabras.length)];
+        const palabra1 = palabras1[Math.floor(Math.random() * palabras.length)];
+        const conector =
+          conectores[Math.floor(Math.random() * conectores.length)];
+        const palabra2 = palabras2[Math.floor(Math.random() * palabras.length)];
 
         const frase = `${inicio} ${palabra1} ${conector} ${palabra2}.`;
         const elemento = document.getElementById("frase");
