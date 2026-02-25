@@ -95,7 +95,7 @@
         const conector = conectores[Math.floor(Math.random() * conectores.length)];
         const palabra2 = palabras[Math.floor(Math.random() * palabras.length)];
 
-        const frase = ${inicio} ${palabra1} ${conector} ${palabra2}.;
+        const frase = `${inicio} ${palabra1} ${conector} ${palabra2}.`;
         const elemento = document.getElementById("frase");
         elemento.style.opacity = 0;
         setTimeout(() => {
