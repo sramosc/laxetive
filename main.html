@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oliver Laxe diario</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Georgia, serif;
+        background-color: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .container {
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+        font-weight: normal;
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        min-height: 60px;
+        transition: opacity 0.3s ease;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        background-color: #222;
+        color: white;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Oliver Laxe diario</h1>
+      <p id="frase"></p>
+      <button onclick="generarFrase()">Generar nueva frase</button>
+    </div>
+    <script>
+      const palabras = [
+        "resiliencia",
+        "inmanencia",
+        "laxitud",
+        "paz interior",
+        "ligereza",
+        "pan con masa madre",
+        "cocretas",
+        "otredad",
+        "nihilismo"
+      ];
+
+      const inicios = [
+        "Hoy comprendo que",
+        "A veces siento que",
+        "En medio del ruido descubro que",
+        "Mientras amaso pensamientos como",
+        "Con cierta ligereza admito que",
+        "Entre la laxitud del domingo pienso que"
+      ];
+
+      const conectores = [
+        "es una forma de",
+        "dialoga con",
+        "se diluye en",
+        "fermenta como",
+        "abraza la",
+        "cuestiona el"
+      ];
+
+      function generarFrase() {
+        const inicio = inicios[Math.floor(Math.random() * inicios.length)];
+        const palabra1 = palabras[Math.floor(Math.random() * palabras.length)];
+        const conector = conectores[Math.floor(Math.random() * conectores.length)];
+        const palabra2 = palabras[Math.floor(Math.random() * palabras.length)];
+
+        const frase = ${inicio} ${palabra1} ${conector} ${palabra2}.;
+        const elemento = document.getElementById("frase");
+        elemento.style.opacity = 0;
+        setTimeout(() => {
+          elemento.textContent = frase;
+          elemento.style.opacity = 1;
+        }, 150);
+      }
+
+      generarFrase();
+    </script>
+  </body>
+</html>
